@@ -1,7 +1,6 @@
 import 'dart:async';
-import 'package:Poro/Screens/Tutorial/Tutorial_screen.dart';
+import 'package:Poro/Screens/Tutorial/loading_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:Poro/Screens/Tutorial/LoadingPage.dart';
 import 'package:lottie/lottie.dart';
 
 void main() {
@@ -34,8 +33,8 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     // TODO: implement initState
-    Future.delayed(Duration(seconds: 9), () {
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => TutorialScreen()));
+    Future.delayed(Duration(seconds: 5), () {
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => loadingScreen()));
     }) ;
     super.initState();
   }
