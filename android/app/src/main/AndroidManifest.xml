@@ -1,4 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.Poro">
     <!-- io.flutter.app.FlutterApplication is an android.app.Application that
          calls FlutterMain.startInitialization(this); in its onCreate method.
@@ -7,10 +8,22 @@
          FlutterApplication and put your custom class here. -->
 <!--    <uses-permission: android:name= "android.permision.ACCESS_FINE_LOCATION"/>-->
 <!--    <uses-permission: android:name= "android.permision.ACCESS_COARSE_LOCATION"/>-->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:label="Poro"
-        android:icon="@mipmap/ic_launcher">
+        android:requestLegacyExternalStorage="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:icon="@mipmap/ic_launcher"
+        tools:targetApi="n">
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBLFm_SQ720MASMa0hTxR13i_AQpbE5osA"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

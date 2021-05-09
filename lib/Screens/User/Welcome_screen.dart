@@ -1,6 +1,8 @@
 import 'package:Poro/Screens/Home/Home_screen.dart';
 import 'package:Poro/Screens/User/Login_screen.dart';
 import 'package:Poro/Screens/User/Signup_screen.dart';
+import 'package:Poro/Screens/main-screen.dart';
+import 'package:Poro/constant.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
 
@@ -55,11 +57,11 @@ class WelcomeScreen extends StatelessWidget {
                     minWidth: double.infinity,
                       height: 60,
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen()));
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginScreen()));
                       },
                     shape: RoundedRectangleBorder(
                       side: BorderSide(
-                        color: Colors.black,
+                        color: Colors.blue,
                       ),
                       borderRadius: BorderRadius.circular(50),
                     ),
@@ -68,6 +70,7 @@ class WelcomeScreen extends StatelessWidget {
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
+                        color: Colors.blue
                       ),
                     ),
                   ),
@@ -76,14 +79,14 @@ class WelcomeScreen extends StatelessWidget {
                     minWidth: double.infinity,
                       height: 60,
                       onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => homeScreen()));
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MainScreen()));
                       },
-                    color: Color(0xFF0095FF),
+                    color: Colors.blue,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50),
                     ),
                     child: Text(
-                      "Login without account",
+                      "Continue without an account",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 18,

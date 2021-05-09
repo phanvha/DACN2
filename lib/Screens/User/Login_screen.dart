@@ -6,6 +6,8 @@ import 'package:Poro/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:Poro/Screens/User/Signup_screen.dart';
+
+import '../main-screen.dart';
 class LoginScreen extends StatefulWidget {
   @override
   _LoginScreenState createState() => _LoginScreenState();
@@ -77,7 +79,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 borderRadius: BorderRadius.all(Radius.circular(16)),
               ),
               onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (_) => homeScreen()));
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => MainScreen()));
               },
             ),
             SizedBox(height: 24),

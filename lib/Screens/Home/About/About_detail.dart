@@ -1,6 +1,7 @@
 import 'package:Poro/Screens/Home/About/Backend/Backend_profile.dart';
 import 'package:Poro/Screens/Home/About/Frontend/frontend_profile.dart';
 import 'package:Poro/Screens/Home/Home_screen.dart';
+import 'package:Poro/Screens/main-screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +22,7 @@ class AboutScreen extends StatelessWidget {
            centerTitle: true,
            actions: [
              IconButton(icon: Icon(Icons.home, color: Colors.black,), onPressed: (){
-               Navigator.push(context, MaterialPageRoute(builder: (_) => homeScreen()));
+               Navigator.push(context, MaterialPageRoute(builder: (_) => MainScreen()));
              }),
            ],
            bottom: TabBar(

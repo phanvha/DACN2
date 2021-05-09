@@ -54,46 +54,50 @@ Container mainCard(context) {
         ),
       ],
     ),
-  child: Row(children: [
-      Container(
-        alignment: Alignment.bottomCenter,
-        width: (MediaQuery.of(context).size.width - 80) / 2,
-        height: 140,
-        child: Lottie.asset("assets/images/systemhelp.json", height: 200, width: 200),
-      ),
-    SizedBox(
-      width: (MediaQuery.of(context).size.width - 80) / 2,
-      height: 150,
-      child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Assistance driver',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.w800,
-              color: Colors.black,
-            ),
-          ),
-          SizedBox(height: 16),
-          Text(
-            'Assist the driver safely on bad roads',
-            style: TextStyle(
-              fontWeight: FontWeight.w800,
-              fontSize: 16,
-              color: Colors.grey[600],
-              ),
-            ),
-          ],
+    child: Row(
+      children: [
+        Container(
+          alignment: Alignment.bottomCenter,
+          width: (MediaQuery.of(context).size.width - 80) / 2,
+          height: 140,
+          child: Lottie.asset("assets/images/systemhelp.json",
+              height: 200, width: 200),
         ),
-      ),
-    ],),
+        SizedBox(
+          width: (MediaQuery.of(context).size.width - 80) / 2,
+          height: 130,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Assistance driver',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w800,
+                  color: Colors.black,
+                ),
+              ),
+              SizedBox(height: 10),
+              Text(
+                'Assist the driver safely on bad roads',
+                style: TextStyle(
+                  fontWeight: FontWeight.w800,
+                  fontSize: 16,
+                  color: Colors.grey[600],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    ),
   );
 }
 
-TextStyle textStyle(double size, FontWeight fontWeight, Color colorName) => TextStyle(
-  fontFamily: 'Quicksand',
-  color: colorName,
-  fontSize: size,
-  fontWeight: fontWeight,
-);
+TextStyle textStyle(double size, FontWeight fontWeight, Color colorName) =>
+    TextStyle(
+      fontFamily: 'Quicksand',
+      color: colorName,
+      fontSize: size,
+      fontWeight: fontWeight,
+    );
