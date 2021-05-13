@@ -16,7 +16,6 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
       future: fetchDataPotholes(http.Client()),
       builder: (context, snapshot) {
         if (snapshot.hasError) print(snapshot.error);
-
         return snapshot.hasData
             ? PhotosList(potholes: snapshot.data)
             : Center(child: CircularProgressIndicator());

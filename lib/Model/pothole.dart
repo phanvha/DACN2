@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class Pothole {
-  final String id;
-  final String image;
-  final double latitude;
-  final double longitude;
-  final String note;
+   String id;
+   String image;
+   double latitude;
+   double longitude;
+   String note;
 
 
 

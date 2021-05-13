@@ -4,10 +4,22 @@ import 'package:Poro/constant.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:hive/hive.dart';
 import 'package:lottie/lottie.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:provider/provider.dart';
+
+import 'Notifier/ChangeNotifier.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+      MultiProvider(providers: [
+        ChangeNotifierProvider.value(value: AppState())
+      ],
+      child: MyApp()
+      )
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -18,7 +30,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.light,
-        primarySwatch: Colors.deepPurple,
+        primarySwatch: Colors.blueGrey,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: MyHomePage(),
@@ -36,6 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     // TODO: implement initState
+    HiveHelper.init();
     Future.delayed(Duration(seconds: 5), () {
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => loadingScreen()));
     }) ;
@@ -62,5 +75,11 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
     );
+  }
+}
+class HiveHelper {
+  static void init() async {
+    final dir = await getApplicationDocumentsDirectory();
+    Hive.init(dir.path);
   }
 }

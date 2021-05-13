@@ -16,19 +16,18 @@ class CategoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return ClipRRect(
-      borderRadius: BorderRadius.circular(13),
+      borderRadius: BorderRadius.circular(5),
       child: Container(
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(13),
+          borderRadius: BorderRadius.circular(5),
           boxShadow: [
             BoxShadow(
-              offset: Offset(0, 17),
-              blurRadius: 20,
-              spreadRadius: -23,
-              color: kShadowColor,
+              color: kPrimaryColor,
+              offset: Offset(0.0, 3.0), //(x,y)
+              blurRadius: 6.0,
             ),
-          ]
+          ],
         ),
         child: Material(
           color: Colors.transparent,
