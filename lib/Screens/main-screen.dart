@@ -47,50 +47,51 @@ class _mainScreen extends State<MainScreen> {
     super.dispose();
   }
 
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        bottomNavigationBar: BottomNavigationBar(
-          onTap: onTabTapped, // new
-          currentIndex: _currentIndex, // new
-          unselectedFontSize: 9,
-          selectedFontSize: 12,
-          elevation: 15,
-          selectedItemColor: kPrimaryColor,
-          type: BottomNavigationBarType.fixed,
-          items: [
-            new BottomNavigationBarItem(
-              icon: Icon(Icons.home_filled),
-              title: Text('Home',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                  )),
-            ),
-            new BottomNavigationBarItem(
-              icon: Icon(Icons.assistant_direction),
-              title: Text(
-                'Discover',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-            new BottomNavigationBarItem(
-                icon: Icon(Icons.account_circle_rounded),
-                title: Text('Profile',
+    return SafeArea(
+      child: Scaffold(
+          bottomNavigationBar: BottomNavigationBar(
+            onTap: onTabTapped, // new
+            currentIndex: _currentIndex, // new
+            unselectedFontSize: 9,
+            selectedFontSize: 12,
+            elevation: 15,
+            selectedItemColor: kPrimaryColor,
+            type: BottomNavigationBarType.fixed,
+            items: [
+              new BottomNavigationBarItem(
+                icon: Icon(Icons.home_filled),
+                title: Text('Home',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                    )))
-          ],
-        ),
-        body: PageView(
-          controller: _pageController,
-          onPageChanged: (index) {
-            setState(() => _currentIndex = index);
-          },
-          children: <Widget>[_children[_currentIndex]],
-        ));
+                    )),
+              ),
+              new BottomNavigationBarItem(
+                icon: Icon(Icons.assistant_direction),
+                title: Text(
+                  'Discover',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              new BottomNavigationBarItem(
+                  icon: Icon(Icons.account_circle_rounded),
+                  title: Text('Profile',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      )))
+            ],
+          ),
+          body: PageView(
+            controller: _pageController,
+            onPageChanged: (index) {
+              setState(() => _currentIndex = index);
+            },
+            children: <Widget>[_children[_currentIndex]],
+          )),
+    );
 
   }
 

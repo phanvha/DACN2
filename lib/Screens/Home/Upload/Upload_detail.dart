@@ -50,8 +50,7 @@ class _UploadScreenState extends State<UploadScreen> {
     });
   }
 
-  uploadFileFromDio(
-      Pothole pothole, File photoFile, BuildContext context) async {
+  uploadFileFromDio(Pothole pothole, File photoFile, BuildContext context) async {
     _isUpload = false;
     var dio = new Dio();
     dio.options.baseUrl = APIClient.baseURL;
@@ -283,7 +282,7 @@ class _UploadScreenState extends State<UploadScreen> {
               panel: Container(
                 height: size.height,
                 decoration: BoxDecoration(
-                  color: kPrimaryLightColor,
+                  color: kPrimaryColor.withOpacity(.8),
                 ),
                 child: Column(
                   children: [
@@ -598,7 +597,7 @@ class _UploadScreenState extends State<UploadScreen> {
                             Text(
                               address == null || address == '' ? "" : address,
                               style: TextStyle(
-                                  color: Colors.black.withOpacity(.4),
+                                  color: Colors.black.withOpacity(.6),
                                   fontSize: 11,
                                   fontWeight: FontWeight.bold),
                             ),

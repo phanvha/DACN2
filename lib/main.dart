@@ -15,7 +15,7 @@ import 'Notifier/ChangeNotifier.dart';
 void main() {
   runApp(
       MultiProvider(providers: [
-        ChangeNotifierProvider.value(value: AppState())
+        ChangeNotifierProvider.value(value: AppState()),
       ],
       child: MyApp()
       )
@@ -49,6 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     // TODO: implement initState
     HiveHelper.init();
+
     Future.delayed(Duration(seconds: 5), () {
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => loadingScreen()));
     }) ;

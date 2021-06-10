@@ -11,7 +11,6 @@ Future<List<Pothole>> fetchDataPotholes(http.Client client) async {
   print("object");
   final response = await client
       .get(Uri.parse(APIClient.URL));
-  print(response.body.toString()+"mm");
   // Use the compute function to run parsePhotos in a separate isolate.
   return compute(parseDataPotholes, response.body);
 }

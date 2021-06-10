@@ -29,15 +29,29 @@ class DirectionsRepository {
     }
     return null;
   }
-  Future<Directions> getDirectionsByAddress({@required String origin, @required String destination,}) async {
-    final response = await _dio.get(
-      _baseUrl,
-      queryParameters: {
-        'origin': origin,
-        'destination': destination,
-        'key': API_KEY,
-      },
-    );
+  Future<Directions> getDirectionsByAddress(String originString,String destinationString,LatLng originLatlng,  LatLng destinationLatlng,) async {
+     var response;
+    if(originString!=null){
+       response = await _dio.get(
+        _baseUrl,
+        queryParameters: {
+          'origin': originString,
+          'destination': destinationString,
+          'key': API_KEY,
+        },
+      );
+    }else{
+      response = await _dio.get(
+        _baseUrl,
+        queryParameters: {
+          'origin': '${originLatlng.latitude},${originLatlng.longitude}',
+          'destination': destinationString,
+          'key': API_KEY,
+        },
+      );
+    }
+
+
 
     // Check if response is successful
     if (response.statusCode == 200) {

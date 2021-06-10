@@ -64,6 +64,11 @@ dependencies:
   path_provider: 1.6.0
   provider: ^5.0.0
   uuid: 2.2.2
+  shake: ^1.0.0
+  custom_dialog: ^0.0.2
+  carousel_slider: ^3.0.0
+  flutter_image_slideshow: ^0.1.0
+  tabbar: ^0.1.1
 
 
 
@@ -121,7 +126,6 @@ fonts:
             - asset: assets/fonts/Quicksand-Bold.ttf
             - asset: assets/fonts/Quicksand-Medium.ttf
             - asset: assets/fonts/Quicksand-SemiBold.ttf
-
         uses-material-design: true
   #
   # For details regarding fonts from package dependencies,
